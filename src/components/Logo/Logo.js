@@ -5,7 +5,7 @@ import logo from './picturePawfect.png';
 
 const Logo = () => {
     return (
-        <div className='ma4' id='logo-img'>
+        <div className='' id='logo-img'>
             <Tilt className="Tilt shadow-2" options={{ max: 55 }} style={{ height: 60, width: 60 }} >
                 {/* eslint-disable-next-line */}
                 <div className="Tilt-inner pt2"><img alt='logo' src={ logo }/></div>

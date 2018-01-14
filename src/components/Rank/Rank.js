@@ -1,13 +1,12 @@
 import React from 'react';
+import './Rank.css';
 
 const Rank = ({ isDog }) => {
 	if(isDog) {
 		return (
-			<div>
-				<div className='white f3'>
-					{'Doggo Spotted!'}
+				<div className='f3 ma0' id='dogfound-text'>
+					{'Doggo Spotted!!'}
 				</div>
-			</div>
 			);
 	} else {
 		return null;
