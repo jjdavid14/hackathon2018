@@ -7,7 +7,7 @@ const SignIn = ({ onRouteChange }) => {
             <main className="pa5">
                 <div className="measure">
                     <fieldset id="sign_in" className="ba b--transparent ph0 mh0">
-                        <legend className="pb2 f1 fw5 ttu ph0 mh0">Login</legend>
+                        <legend className="pb2 f1 fw5 ttu ph0 mh0 pt4-ns">Login</legend>
                         <div className="mt3">
                             <label className="db fw5 lh-copy f9" htmlFor="email-address">Email</label>
                             <input className="pa2 input-reset bg-white-30 w-100" type="email" name="email-address" id="email-address" />

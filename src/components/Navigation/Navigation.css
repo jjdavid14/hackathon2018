@@ -1,0 +1,11 @@
+.nav-button {
+    margin-right: 30px;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.nav-button:hover {
+    margin-right: 30px;
+    color: #37434d8c;
+    text-decoration: underline;
+}
