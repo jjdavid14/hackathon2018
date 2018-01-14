@@ -1,16 +1,17 @@
 import React from 'react';
 
-const Rank = () => {
-	return (
-		<div>
-			<div className='white f3'>
-				{'Jamie, your current rank is...'}
+const Rank = ({ isDog }) => {
+	if(isDog) {
+		return (
+			<div>
+				<div className='white f3'>
+					{'Doggo Spotted!'}
+				</div>
 			</div>
-			<div className='white f1'>
-				{'#5'}
-			</div>
-		</div>
-		);
+			);
+	} else {
+		return null;
+	}
 }
 
 export default Rank;

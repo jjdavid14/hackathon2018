@@ -33,7 +33,7 @@ class App extends Component {
       input: '',
       imageUrl: '',
       route: 'signin',
-      isSignedIn: false
+      isDog: false
     }
   }
 
@@ -42,52 +42,53 @@ class App extends Component {
   }
 
   onButtonSubmit = () => {
+    this.setState({isDog: false});
     this.setState({imageUrl: this.state.input});
-    app.models
-      .predict(Clarifai.GENERAL_MODEL, this.state.input, {video: true})
-      .then(
-      function(response) {
-        console.log(response);
-      },
-      function(err) {
-        // there was an error
+    // clarifai.models
+    //   .predict(Clarifai.GENERAL_MODEL, this.state.input, {video: true})
+    //   .then(
+    //   function(response) {
+    //     console.log(response);
+    //   },
+    //   function(err) {
+    //     // there was an error
+    //   }
+    // );
+    app.models.predict(Clarifai.GENERAL_MODEL, this.state.input, {video: true, selectConcepts: [{name: 'dog'}]})
+  .then(
+    (response) => {
+      for(let i = 0; i < response.outputs[0].data.frames.length; i++) {
+        //console.log(response.outputs[0].data.frames[i].data.concepts[0].value);
+        if(response.outputs[0].data.frames[i].data.concepts[0].value > 0.50) {
+          this.setState({isDog: true});
+        }
       }
-    );
+    }
+  )
+  .catch(
+    function(err) {
+      console.log(err);
+    });
   }
 
   onRouteChange = (route) => {
-    if(route === 'signout') {
-      this.setState({isSignedIn: false});
-    } else if(route === 'home') {
-      this.setState({isSignedIn: true});
-    }
     this.setState({route: route});
   }
 
   render() {
-    const { isSignedIn, imageUrl, route } = this.state;
+    const { isDog, imageUrl, route } = this.state;
     return (
       <div className="App">
          <Particles className='particles'
               params={particlesOptions}
           />
-       <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
-       { route === 'home'
-         ? <div>
            <Logo />
-           <Rank />
+           <Rank isDog={isDog}/>
            <ImageLinkForm 
             onInputChange={this.onInputChange}
             onButtonSubmit={this.onButtonSubmit}
             />
            <FaceRecognition imageUrl={imageUrl}/>
-         </div>
-         : (
-            route === 'signin'
-            ? <Signin onRouteChange={this.onRouteChange}/>
-            : <Register onRouteChange={this.onRouteChange}/>
-          )
-        }
       </div>
     );
   }
