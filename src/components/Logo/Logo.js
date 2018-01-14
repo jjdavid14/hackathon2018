@@ -11,6 +11,7 @@ const Logo = () => {
                 <div className="Tilt-inner pt2"><img alt='logo' src={ logo }/></div>
             </Tilt>
             <p className="f1 ma0 pa0" id='title'>Picture Pawfect</p>
+            <p className="f6 pb4">A message will appear below this text if a dog has been spotted.</p>
         </div>
     );
 };
