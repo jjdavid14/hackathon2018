@@ -1,5 +1,6 @@
 import React from 'react';
 
+<<<<<<< HEAD
 const Rank = () => {
     return (
         <div>
@@ -11,6 +12,20 @@ const Rank = () => {
         </div>
         </div>
     );
+=======
+const Rank = ({ isDog }) => {
+	if(isDog) {
+		return (
+			<div>
+				<div className='white f3'>
+					{'Doggo Spotted!'}
+				</div>
+			</div>
+			);
+	} else {
+		return null;
+	}
+>>>>>>> 08c11f953e9fb06e946aa0d8ce849a7e288b6989
 }
 
 export default Rank;
