@@ -1,0 +1,47 @@
+#email-address {
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightslategrey;
+    width: 450px;
+}
+
+#email-address:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #4a5a67;
+}
+
+#email-address:focus {
+    outline: none;
+}
+
+#password {
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightslategrey;
+    width: 450px;
+}
+
+#password:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #4a5a67;
+}
+
+#password:focus {
+    outline: none;
+}
+
+#signin-button {
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(119, 136, 153, 0.719);
+    background-color: whitesmoke;
+}
+#signin-button:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.747);
+    border-color:rgba(255, 255, 255, 0.5);
+}
+
+#signin-button:focus {
+    outline: none;
+}

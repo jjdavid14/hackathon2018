@@ -1,5 +1,26 @@
+/*
+ green: #90947d
+ dusty rose: #c59893
+ mauve: #dbb8b4
+ light grey: #e3d9d7
+ grey-blue: #c9d1d3
+*/
+
+/*
+  darkest greyblue: #4a5a67
+  tealishblue: #62828f
+  seagreenblue: #bac8c9
+  peachy: #edc1b6
+  mauvey: #c7aeb4
+*/
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
+  background: linear-gradient(89deg, #edc1b6 0%, #bac8c9 100%);
+}
+
+button {
+  cursor: pointer;
 }
